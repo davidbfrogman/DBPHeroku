@@ -127,6 +127,10 @@
             //the status is correct now though.
             res.status(404).sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl + '/404' } });
         }
+        else if(req.originalUrl.toLowerCase().indexOf('loading.gif') > 0)
+        {
+            res.sendFile(root + '/dist/images/gifs/loading.gif'); 
+        }
         else
         {
            console.log('hit catchall handling not in an aspx page.');
