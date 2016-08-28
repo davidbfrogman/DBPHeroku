@@ -54,7 +54,6 @@
     app.use(express.static(root, { dotfiles: 'allow', maxAge: currentConfig.cacheShort} ));
     app.use(express.static(root + '/dist', { dotfiles: 'allow', maxAge: currentConfig.cacheShort, index: false} ));
     app.use(express.static(root + '/images', { dotfiles: 'allow', maxAge: currentConfig.cacheLong, index: false} ));
-    app.use(express.static(root + '/images/gifs', { dotfiles: 'allow', maxAge: currentConfig.cacheLong, index: false} ));
     app.use(express.static(root + '/jspm_packages', { dotfiles: 'allow', maxAge: currentConfig.cacheLong, index: false} ));
     app.use(express.static(root + '/node_modules', { dotfiles: 'allow', maxAge: currentConfig.cacheLong, index: false} ));
    
@@ -129,6 +128,8 @@
         }
         else if(req.originalUrl.toLowerCase().indexOf('loading.gif') > 0)
         {
+            console.log('In my stupid hardcoding for a single fucking file.');
+            console.log('Heres the fucking gif' + root);
             res.sendFile(root + '/dist/images/gifs/loading.gif'); 
         }
         else
