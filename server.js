@@ -3,8 +3,8 @@
     // set up ========================
     var express  = require('express');
     var compression =  require('compression');
-    var fallback = require('express-history-api-fallback')
-    var root     = __dirname
+    var fallback = require('express-history-api-fallback');
+    var root     = __dirname;
     var app      = express();                               // create our app w/ express
     var morgan   = require('morgan');             // log requests to the console (express4)
     var logger   = morgan('combined');
@@ -54,6 +54,7 @@
     app.use(express.static(root, { dotfiles: 'allow', maxAge: currentConfig.cacheShort} ));
     app.use(express.static(root + '/dist', { dotfiles: 'allow', maxAge: currentConfig.cacheShort, index: false} ));
     app.use(express.static(root + '/images', { dotfiles: 'allow', maxAge: currentConfig.cacheLong, index: false} ));
+    app.use(express.static(root + '/images/gifs', { dotfiles: 'allow', maxAge: currentConfig.cacheLong, index: false} ));
     app.use(express.static(root + '/jspm_packages', { dotfiles: 'allow', maxAge: currentConfig.cacheLong, index: false} ));
     app.use(express.static(root + '/node_modules', { dotfiles: 'allow', maxAge: currentConfig.cacheLong, index: false} ));
    
