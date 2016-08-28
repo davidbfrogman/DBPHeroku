@@ -13,6 +13,8 @@ module.exports = {
   imagesFulls: './images/fulls/*.jpg',
   imagesThumbs: './images/thumbs/',
   imagesOut: outputRoot + '/images/',
+  gifsIn: './images/gifs/**/*.gif',
+  gifsOut: outputRoot + '/images/gifs/',
   output: outputRoot,
   exportSrv: exporSrvtRoot,
   doc: './doc',

@@ -74,6 +74,12 @@ gulp.task('copy-images', function() {
     .pipe(gulp.dest(paths.imagesOut));
 });
 
+gulp.task('copy-gifs', function() {
+  return gulp.src(paths.gifsIn)
+    .pipe(changed(paths.gifsOut, {extension: '.gif'}))
+    .pipe(gulp.dest(paths.gifsOut));
+});
+
 gulp.task('optimize-images', () => {
 	return gulp.src(paths.imagesIn)
         .pipe(debug({title: 'Optimizing Image: '}))
@@ -92,7 +98,7 @@ gulp.task('optimize-images', () => {
 gulp.task('build', function(callback) {
   return runSequence(
     'clean',
-    ['build-system', 'build-html', 'build-css-styles','build-content' , 'copy-images'],
+    ['build-system', 'build-html', 'build-css-styles','build-content' , 'copy-images', 'copy-gifs'],
     callback
   );
 });
@@ -100,7 +106,7 @@ gulp.task('build', function(callback) {
 gulp.task('build-for-bundle', function(callback) {
   return runSequence(
     'clean',
-    ['build-system-no-source-maps', 'build-html', 'build-css-styles','build-content', 'copy-images'],
+    ['build-system-no-source-maps', 'build-html', 'build-css-styles','build-content', 'copy-images', 'copy-gifs'],
     callback
   );
 });
@@ -108,7 +114,7 @@ gulp.task('build-for-bundle', function(callback) {
 gulp.task('build-for-deploy', function(callback) {
   return runSequence(
     'clean',
-    ['build-system-no-source-maps', 'build-html', 'build-css-styles','build-content', 'optimize-images'],
+    ['build-system-no-source-maps', 'build-html', 'build-css-styles','build-content','generate-thumbnails', 'optimize-images'],
     callback
   );
 });
