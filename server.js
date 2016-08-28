@@ -126,11 +126,12 @@
             //the status is correct now though.
             res.status(404).sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl + '/404' } });
         }
-        else if(req.originalUrl.toLowerCase().indexOf('loading.gif') > 0)
+        else if(req.originalUrl.toLowerCase().indexOf('loading2.gif') > 0)
         {
             console.log('In my stupid hardcoding for a single fucking file.');
-            console.log('Heres the fucking gif' + root);
-            res.sendFile(root + '/dist/images/gifs/loading.gif'); 
+            console.log('Heres the fucking gif root:' + root);
+            console.log('Full Path:' + root + '/dist/images/gifs/loading2.gif')
+            res.sendFile(root + '/dist/images/gifs/loading2.gif'); 
         }
         else
         {
