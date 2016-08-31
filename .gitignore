@@ -6,3 +6,5 @@ bower_components
 /dist
 build/reports
 coverage
+/images/thumbs
+

@@ -114,6 +114,7 @@ gulp.task('build-for-bundle', function(callback) {
 gulp.task('build-for-deploy', function(callback) {
   return runSequence(
     'clean',
+    'generate-thumbnails',
     ['build-system-no-source-maps', 'build-html', 'build-css-styles','build-content', 'optimize-images', 'copy-gifs'],
     callback
   );
