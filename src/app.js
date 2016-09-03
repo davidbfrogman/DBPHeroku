@@ -31,6 +31,7 @@ export class App {
             { route: ['contact', 'Contact', 'CONTACT'], name: 'contact', moduleId: 'contact', nav: true, title: 'Contact' },
             { route: ['portfolioManager'], name: 'portfolioManager', moduleId: './PortfolioManager/index', nav: showPortManInNav, title: 'Port Manager' },
             { route: ['imagedetail'], name: 'imagedetail', moduleId: 'imagedetail', nav: false, title: 'Portfolio Item Image Detail' },
+            { route: ['portlist'], name: 'portlist', moduleId: 'portlist', nav: false, title: 'Portfolio Listing' },
             { route: ['pd/:detailname/:id'], name: 'imagedetail', moduleId: 'imagedetail', nav: false, title: 'Photography' },
             { route: ['404'], name: 'pagenotfound', moduleId: 'pagenotfound', nav: false, title: '404'}
         ]).mapUnknownRoutes('pagenotfound', 'pagenotfound');

@@ -1,0 +1,17 @@
+<template>
+	<div class="container">
+		<div class="row clearfix">
+			<div repeat.for="book of portfolioBooks" class="col-md-6 col-lg-3 " style="margin-bottom:40px;">
+				<div class="">
+					<a href.bind="book.prettyUrl" title.bind="book.prettyTitle">
+						<img src.bind="'/dist/images/thumbs/' + book.items[0].imageURL" alt.bind="book.items[0].altText">
+						<div class="font-alt">
+							<h3 class="">${book.title}</h3>
+							<div class="">${book.subtitle}</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
