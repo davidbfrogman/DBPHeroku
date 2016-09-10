@@ -56,8 +56,8 @@ export class PortfolioManagerService {
                 headers: { "Accept": "application/json", "Content-Type": "application/json" }
             })
                 .then(
-                    response => { return response.json() }
-                    );
+                response => { return response.json() }
+                );
         }
         else {
             return this.http.fetch(`portfolioBooks`, {
@@ -66,8 +66,8 @@ export class PortfolioManagerService {
                 headers: { "Accept": "application/json", "Content-Type": "application/json" }
             })
                 .then(
-                    response => { return response.json() }
-                    );
+                response => { return response.json() }
+                );
         };
     }
 
@@ -120,8 +120,8 @@ export class PortfolioManagerService {
             headers: { "Accept": "application/json", "Content-Type": "application/json" }
         })
             .then(
-                response => { return response.json() }
-                );
+            response => { return response.json() }
+            );
     }
 }
 
