@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var portfolioItem = require('../models/portfolioItem.js');
+var portfolioItem = require('../models/portfolioItemSchema.js');
 
 /* GET /todos listing. */
 router.get('/', function(req, res, next) {
