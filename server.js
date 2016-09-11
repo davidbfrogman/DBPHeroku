@@ -11,6 +11,14 @@
     var favicon  = require('serve-favicon');
     var port     = process.env.PORT || 8080;        // set our port
     var prodDomain = 'www.davebrownphotography.com';       //change this whenever we setup our cname
+    var bodyParser = require('body-parser');
+    var mongoose = require('mongoose');
+    var router = express.Router();
+    var portItemRoutes = require('./api/routes/portfolioItem.js')
+
+
+    // models ===========================
+    var PortfolioItem = require('./api/models/portfolioItem');
     
     // configuration =================
     var config = {
@@ -37,6 +45,11 @@
     app.use( require('express-force-domain')(currentConfig.rootUrl) );
     
     app.use(favicon(__dirname + '/favicon.ico'));
+
+    //Here were telling the server to be able to read things from the body of a post.
+    app.use(bodyParser.urlencoded({ extended: true }));
+    
+    app.use(bodyParser.json());
     
     // log every request to the console except images...
     app.use(
@@ -44,7 +57,9 @@
             skip : function(req,res) { return req.url.indexOf('.jpg') != -1; }
         })
     );
-    
+
+    mongoose.connect('mongodb://dbuser:asdfkjoaisd8728SAKJHSUse321@ds147975.mlab.com:47975/davebrownportfoliodb');
+
     //client -------------------------------------------------------------
                                                      
     app.use(require('prerender-node').set('prerenderServiceUrl', currentConfig.prerenderServiceURL));
@@ -56,6 +71,13 @@
     app.use(express.static(root + '/images', { dotfiles: 'allow', maxAge: currentConfig.cacheLong, index: false} ));
     app.use(express.static(root + '/jspm_packages', { dotfiles: 'allow', maxAge: currentConfig.cacheLong, index: false} ));
     app.use(express.static(root + '/node_modules', { dotfiles: 'allow', maxAge: currentConfig.cacheLong, index: false} ));
+
+    // REGISTER OUR ROUTES -------------------------------
+    // all of our routes will be prefixed with /api
+    app.use('/api', router);
+    app.use('/api/portfolioItem',portItemRoutes);
+
+    //Redirects-----------------------------------------------------------------
    
     app.get('*', function(req, res, next) {
         console.log('OriginalUrl for the request: ' + req.originalUrl);
