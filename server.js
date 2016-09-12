@@ -14,7 +14,9 @@
     var bodyParser = require('body-parser');
     var mongoose = require('mongoose');
     var router = express.Router();
-    var portItemRoutes = require('./api/routes/portfolioItem.js')
+    var portfolioItemRoutes = require('./api/routes/portfolioItem.js')
+    var portfolioBookRoutes = require('./api/routes/portfolioBook.js')
+    var portfolioCategoryRoutes = require('./api/routes/portfolioCategory.js')
 
 
     // models ===========================
@@ -75,7 +77,9 @@
     // REGISTER OUR ROUTES -------------------------------
     // all of our routes will be prefixed with /api
     app.use('/api', router);
-    app.use('/api/portfolioItem',portItemRoutes);
+    app.use('/api/portfolioItem',portfolioItemRoutes);
+    app.use('/api/portfolioBook',portfolioBookRoutes);
+    app.use('/api/portfolioCategory',portfolioCategoryRoutes);
 
     //Redirects-----------------------------------------------------------------
    
