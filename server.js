@@ -1,7 +1,5 @@
     'use strict';
 
-
-
     // set up ========================
     var express  = require('express');
     var compression =  require('compression');
@@ -16,38 +14,13 @@
     var bodyParser = require('body-parser');
     var mongoose = require('mongoose');
     var router = express.Router();
-
-    //var portfolioItemRoutes = require('./api/routes/portfolioItem.js');
-    //var portfolioBookRoutes = require('./api/routes/portfolioBook.js');
-    //var portfolioCategoryRoutes = require('./api/routes/portfolioCategory.js');
-
-    //Generic Router Implementation 
-    var BaseAPIController = require('./api/controllers/Base/BaseAPIController.js');
-    var GenericRouter = require('./api/controllers/Base/GenericRouter.js');
+    var mers = require('mers');
 
     // models ===========================
-    //var PortfolioItem = require('./api/models/portfolioItemSchema');
-    
-    // configuration =================
-    var config = {
-        devConfig : {
-          production : false,  
-          cacheShort : '0',
-          cacheLong : '0',
-          prerenderServiceURL: 'http://localhost:3000',
-          rootUrl : 'http://localhost:' + port   
-        },
-        prodConfig : {
-            production : true,
-            cacheShort : '7d',  //So apparently google freaks out if the browser cache is less than 7 days. 
-            cacheLong : '14d',
-            prerenderServiceURL: 'http://service.prerender.io', //This probably needs to change.
-            rootUrl : 'http://' + prodDomain
-        },
-    }
+    var ModelSchema = require('./api/models/ModelSchema');
     
     //Get the correct config prod/dev
-    var currentConfig = process.env.prod == 'true' ? config.prodConfig : config.devConfig;
+    var currentConfig = require('./serverconfig.js');
     
     //This will be helpful on production when we want to force users to www version of my site.
     app.use( require('express-force-domain')(currentConfig.rootUrl) );
@@ -82,12 +55,7 @@
 
     // REGISTER OUR ROUTES -------------------------------
     // all of our routes will be prefixed with /api
-    //app.use('/api', router);
-    new GenericRouter().BuildRoutingForAPI(app);
-    //app.use('/api/portfolioItem',PortfolioItemController);
-    //app.use('/api/portfolioItem',portfolioItemRoutes);
-    //app.use('/api/portfolioBook',portfolioBookRoutes);
-    //app.use('/api/portfolioCategory',portfolioCategoryRoutes);
+    app.use('/api',mers({mongoose}).rest());
 
     //Redirects-----------------------------------------------------------------
    
