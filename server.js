@@ -9,8 +9,6 @@
     var morgan   = require('morgan');             // log requests to the console (express4)
     var logger   = morgan('combined');
     var favicon  = require('serve-favicon');
-    var port     = process.env.PORT || 8080;        // set our port
-    var prodDomain = 'www.davebrownphotography.com';       //change this whenever we setup our cname
     var bodyParser = require('body-parser');
     var mongoose = require('mongoose');
     var router = express.Router();
@@ -137,6 +135,6 @@
     });
     
     // listen (start app with node server.js) ======================================
-    app.listen(port);
-    console.log("App listening on port: " + port);
+    app.listen(currentConfig.port);
+    console.log("App listening on port: " + currentConfig.port);
     
