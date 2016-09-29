@@ -1,5 +1,7 @@
-    
-    
+    'use strict';
+
+
+
     // set up ========================
     var express  = require('express');
     var compression =  require('compression');
@@ -14,13 +16,17 @@
     var bodyParser = require('body-parser');
     var mongoose = require('mongoose');
     var router = express.Router();
-    var portfolioItemRoutes = require('./api/routes/portfolioItem.js')
-    var portfolioBookRoutes = require('./api/routes/portfolioBook.js')
-    var portfolioCategoryRoutes = require('./api/routes/portfolioCategory.js')
 
+    //var portfolioItemRoutes = require('./api/routes/portfolioItem.js');
+    //var portfolioBookRoutes = require('./api/routes/portfolioBook.js');
+    //var portfolioCategoryRoutes = require('./api/routes/portfolioCategory.js');
+
+    //Generic Router Implementation 
+    var BaseAPIController = require('./api/controllers/Base/BaseAPIController.js');
+    var GenericRouter = require('./api/controllers/Base/GenericRouter.js');
 
     // models ===========================
-    var PortfolioItem = require('./api/models/portfolioItem');
+    //var PortfolioItem = require('./api/models/portfolioItemSchema');
     
     // configuration =================
     var config = {
@@ -76,10 +82,12 @@
 
     // REGISTER OUR ROUTES -------------------------------
     // all of our routes will be prefixed with /api
-    app.use('/api', router);
-    app.use('/api/portfolioItem',portfolioItemRoutes);
-    app.use('/api/portfolioBook',portfolioBookRoutes);
-    app.use('/api/portfolioCategory',portfolioCategoryRoutes);
+    //app.use('/api', router);
+    new GenericRouter().BuildRoutingForAPI(app);
+    //app.use('/api/portfolioItem',PortfolioItemController);
+    //app.use('/api/portfolioItem',portfolioItemRoutes);
+    //app.use('/api/portfolioBook',portfolioBookRoutes);
+    //app.use('/api/portfolioCategory',portfolioCategoryRoutes);
 
     //Redirects-----------------------------------------------------------------
    
