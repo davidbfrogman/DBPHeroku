@@ -35,6 +35,11 @@ export class List {
         this.router.navigateToRoute('create');
         this.scrollPosition = $(window).scrollTop();
     };
+    
+    navigateToTransformer() {
+        this.router.navigateToRoute('portfolioTransformer');
+        this.scrollPosition = $(window).scrollTop();
+    };
 
     getData() {
         return this.service.getAll()

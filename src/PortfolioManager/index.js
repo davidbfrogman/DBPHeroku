@@ -18,7 +18,8 @@ export class Index {
         config.map([
             { route: ['', 'list'], moduleId: './list', name: 'list' },
             { route: 'edit/:id', moduleId: './edit', name: 'edit' },
-            { route: 'create', moduleId: './edit', name: 'create' }
+            { route: 'create', moduleId: './edit', name: 'create' },
+            { route: 'portfolioTransformer', moduleId: './portfolioTransformer', name: 'portfolioTransformer' }
         ]);
 
         this.router = router;

@@ -11,7 +11,7 @@ export class InstagramService {
         this.http = http;
         this.dbpConfig = dbpConfig;
 
-        this.token = '963639.54b46af.6b3db9c5455d42d99e25a06dfbef8dbd';
+        this.token = this.dbpConfig.instagramToken;
     }
   
   recentMedia() {
