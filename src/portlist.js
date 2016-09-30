@@ -3,7 +3,7 @@ import {dbpUtility} from 'dbpUtility';
 import {HttpClient} from 'aurelia-fetch-client';
 import 'fetch';
 import {Router} from 'aurelia-router';
-import {PortfolioManagerService} from './PortfolioManager/PortfolioManagerService';
+import {PortfolioManagerService} from './service/dbpSQLPortfolioService';
 
 @inject(dbpUtility, HttpClient, Router,PortfolioManagerService)
 export class portlist {

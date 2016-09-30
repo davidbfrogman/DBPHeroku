@@ -1,5 +1,5 @@
 import {inject} from 'aurelia-framework';
-import {PortfolioManagerService} from './PortfolioManagerService';
+import {PortfolioManagerService} from '../service/dbpSQLPortfolioService';
 import {Router} from 'aurelia-router';
 
 @inject(PortfolioManagerService, Router)

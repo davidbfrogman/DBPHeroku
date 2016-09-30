@@ -5,6 +5,10 @@ export class dbpConfig{
 	get dbpApiBaseUrl(){
 		return "http://api.davebrownphotography.com/api/";
 	}
+
+	get dbpMongoApiBaseUrl(){
+		return "http://localhost:8080/api/";
+	}
 	
 	get blogApiBaseUrl(){
 		return  "http://blog.davebrownphotography.com/wp-json/wp/v2/";

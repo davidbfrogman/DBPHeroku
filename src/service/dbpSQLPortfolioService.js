@@ -3,18 +3,15 @@ import {HttpClient} from 'aurelia-fetch-client';
 import 'fetch';
 import {dbpConfig} from 'dbpConfig';
 
-// ctrl-/ to comment a selection in atom.
-
-@inject(HttpClient, dbpConfig)
+@inject(dbpConfig)
 export class PortfolioManagerService {
     portfolioBooks = [];
     portfolioCategories = [];
 
-    constructor(http, dbpConfig) {
-        this.http = http;
+    constructor(dbpConfig) {
+        this.http = new HttpClient();
         this.dbpConfig = dbpConfig;
-
-        http.configure(config => {
+        this.http.configure(config => {
             config
                 .useStandardConfiguration()
                 .withBaseUrl(this.dbpConfig.dbpApiBaseUrl);

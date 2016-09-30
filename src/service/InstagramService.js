@@ -10,7 +10,6 @@ export class InstagramService {
   constructor(http, dbpConfig) {
         this.http = http;
         this.dbpConfig = dbpConfig;
-
         this.token = this.dbpConfig.instagramToken;
     }
   

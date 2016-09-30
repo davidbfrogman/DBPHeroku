@@ -2,7 +2,7 @@ import {inject} from 'aurelia-framework';
 import {HttpClient} from 'aurelia-fetch-client';
 import 'fetch';
 import {Router} from 'aurelia-router';
-import {PortfolioManagerService} from './PortfolioManager/PortfolioManagerService';
+import {PortfolioManagerService} from './service/dbpSQLPortfolioService';
 import {dbpheader} from 'controls/dbpheader';
 import {dbpUtility} from 'dbpUtility';
 import Isotope from 'isotope-layout';

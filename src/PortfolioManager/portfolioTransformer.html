@@ -1,5 +1,13 @@
 <template>
 	<section >
-		This is our transformer.
+		<h1>Portfolio Transformer.</h1>
+		<div>
+		<button class="btn btn-info" click.delegate="getPortfolioBooksToTransform()">Get Books To Transform</button>
+		</div>
+		<div>
+		<div>We have ${WebAPIPortfolioCount} we're going to transform.</div>
+		</div>
+		<button class="btn btn-info" click.delegate="sendPortfolioBooksToMongo()">Send Books to Mongo</button>
+		<span id="spnSaveStatus" ></span>
 	</section>
 </template>

@@ -1,5 +1,5 @@
 import {inject} from 'aurelia-framework';
-import {PortfolioManagerService} from './PortfolioManager/PortfolioManagerService';
+import {PortfolioManagerService} from './service/dbpSQLPortfolioService';
 import {dbpUtility} from 'dbpUtility';
 
 
