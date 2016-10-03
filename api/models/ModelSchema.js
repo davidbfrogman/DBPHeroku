@@ -1,9 +1,10 @@
 var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
+var autoIncrement = require('mongoose-auto-increment');
+
 mongoose.Promise = global.Promise;
 
 var PortfolioItemSchema   = new Schema({
-    id: Schema.ObjectId,
     portfolioBookId: Number,
     altText: String,
     imageURL: String,
@@ -11,19 +12,19 @@ var PortfolioItemSchema   = new Schema({
     width: Number,
     height: Number
 });
-var PortfolioItem = module.exports.PortfolioItem = mongoose.model('PortfolioItem', PortfolioItemSchema);
+module.exports.PortfolioItemSchema = PortfolioItemSchema;
+module.exports.PortfolioItem = mongoose.model('PortfolioItem', PortfolioItemSchema);
 
 var PortfolioCategorySchema   = new Schema({
-    id: Schema.ObjectId,
     name: String,
     count: Number,
     filter: String,
     order: Number
 });
-var PortfolioCategory = module.exports.PortfolioCategory = mongoose.model('PortfolioCategory', PortfolioCategorySchema);
+module.exports.PortfolioCategorySchema = PortfolioCategorySchema;
+module.exports.PortfolioCategory = mongoose.model('PortfolioCategory', PortfolioCategorySchema);
 
 var PortfolioBookSchema   = new Schema({
-    id: Schema.ObjectId,
     title: String,
     description: String,
     imageThumbnailURL: String,
@@ -34,4 +35,5 @@ var PortfolioBookSchema   = new Schema({
     subtitle: String,
     isSingle: Boolean
 });
-var PortfolioBook = module.exports.PortfolioBook = mongoose.model('PortfolioBook', PortfolioBookSchema);
+module.exports.PortfolioBookSchema = PortfolioBookSchema;
+module.exports.PortfolioBook = mongoose.model('PortfolioBook', PortfolioBookSchema);

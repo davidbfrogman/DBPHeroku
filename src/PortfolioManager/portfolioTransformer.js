@@ -34,17 +34,13 @@ export class portfolioTransformer {
                     {
                         //Ok we're moving the class and the categories
                         //into the category array.  This will generate all our port books with the proper categories.
-                        var categories = [];
-                        var category = this.portfolioBooks[i].category;
-                        var subcategory = this.portfolioBooks[i].class;
-                        categories.push(category);
-                        if(subcategory){ categories.push(subcategory)};
+                        var categories = [this.portfolioBooks[i].category];
+                        if(this.portfolioBooks[i].class){ categories.push(this.portfolioBooks[i].class)};
 
                         this.portfolioBooks[i].categories = categories;
 
                         delete this.portfolioBooks[i].category;
                         delete this.portfolioBooks[i].id;
-                        
 
                         for(var j = 0; j < this.portfolioBooks[i].items.length; j++){
                             delete this.portfolioBooks[i].items[j].id;
@@ -58,7 +54,7 @@ export class portfolioTransformer {
         spnSaveStatus.show();
         spnSaveStatus.html('Saving....');
         this.dbpMongoAPIService.savePortfolioBooks(this.portfolioBooks)
-            .then(response => spnSaveStatus.html('Just saved ' + response.length + ' Port Books to MongoDB'))
+            .then(books => spnSaveStatus.html('Just saved ' + books.length + ' Port Books to MongoDB'))
             .then(() => this.getPortfolioBooks())
             .then(() => spnSaveStatus.fadeOut(4000));
     }

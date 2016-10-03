@@ -13,6 +13,7 @@
     var mongoose = require('mongoose');
     var router = express.Router();
     var mers = require('mers');
+    var autoIncrement = require('mongoose-auto-increment');
 
     // models ===========================
     var ModelSchema = require('./api/models/ModelSchema');
@@ -37,7 +38,12 @@
         })
     );
 
-    mongoose.connect('mongodb://dbuser:asdfkjoaisd8728SAKJHSUse321@ds147975.mlab.com:47975/davebrownportfoliodb');
+    var connection = mongoose.connect('mongodb://dbuser:asdfkjoaisd8728SAKJHSUse321@ds147975.mlab.com:47975/davebrownportfoliodb');
+    autoIncrement.initialize(connection);
+    ModelSchema.PortfolioItemSchema.plugin(autoIncrement.plugin, 'PortfolioItem');
+    ModelSchema.PortfolioCategorySchema.plugin(autoIncrement.plugin, 'PortfolioBook');
+    ModelSchema.PortfolioBookSchema.plugin(autoIncrement.plugin, 'PortfolioCategory');
+
 
     //client -------------------------------------------------------------
                                                      
