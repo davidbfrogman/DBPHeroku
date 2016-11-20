@@ -77,7 +77,7 @@ export class contact {
     }
 
     buildMapUserInterface() {
-        var mapLocation = new google.maps.LatLng(50.0773402, 14.4032811, 400);
+        var mapLocation = new google.maps.LatLng(50.077689, 14.458800, 400);
 
         var $mapis = $('#map');
 
@@ -108,7 +108,7 @@ export class contact {
                 icon: image,
                 title: 'Dave Brown Photography Studios',
                 infoWindow: {
-                    content: '<p><strong>Dave Brown Photography</strong><br/>Elišky Peškové 469/6, 150 00 Praha 5-Smíchov<br/>P: +420 605 336 247<br/>E: info@davebrownphotography.com </p>'
+                    content: '<p><strong>Dave Brown Photography</strong><br/>Vinohradská 1786/122, 130 00 Praha 3-Vinohrady<br/>P: +420 774 954 078<br/>E: info@davebrownphotography.com </p>'
                 }
             });
 
