@@ -82,12 +82,11 @@ gulp.task('copy-gifs', function() {
 
 gulp.task('optimize-images', () => {
 	return gulp.src(paths.imagesIn)
-        .pipe(debug({title: 'Optimizing Image: '}))
-		.pipe(imagemin({
-			progressive: true,
-			svgoPlugins: [{removeViewBox: false}],
-			use: [pngquant()]
-		}))
+        .pipe(imagemin([
+           imagemin.gifsicle({interlaced: true}),
+           imagemin.jpegtran({progressive: true}),
+           imagemin.svgo({plugins: [{removeViewBox: false}]})
+       ]))
 		.pipe(gulp.dest(paths.imagesOut));
 });
 

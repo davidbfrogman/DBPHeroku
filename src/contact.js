@@ -65,7 +65,7 @@ export class contact {
 
     loadGoogleMap() {
         if (typeof google === 'undefined') {
-            this.loadScript('https://maps.googleapis.com/maps/api/js', () => {
+            this.loadScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyAv_1hw7Pv97rQ--BowxPEOkb_ZrxDpa0U', () => {
                 this.loadScript('jspm_packages/npm/gmaps@0.4.23/gmaps.js', () => {
                     this.buildMapUserInterface();
                 });
