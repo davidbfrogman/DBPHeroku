@@ -7,7 +7,7 @@ export class reviewsdata {
                     content: 'Incredible. Dave is impeccably talented at what he does. I came to Dave wanting some high quality & beautiful photos to use for my website and I was not disappointed. I will admit, I was super nervous getting in front of a camera(I\'m a musician, not a model) so of course I was feeling self-conscious, but Dave was super honest with me about posing(highly appreciated), he told me what sorts of poses look best, but most importantly he let me be myself, and I absolutely fell in love with the photos he took.'
                 },
                 {
-                    name: 'Brett / Remax Prague',
+                    name: 'Brett / Remax New York',
                     content: 'If you\'re serious and you want some truly kick ass photographs, book Dave Brown Photography. You won\'t be disappointed.'
                 },
                 {

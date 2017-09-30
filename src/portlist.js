@@ -27,12 +27,12 @@ export class portlist {
                     //Now we need to remove the space from the string because later we're going to filter on it.
                     //For instance the editorial portrait category is something we want to filter on.
                     //if(i >2){ delete this.portfolioBooks[i]; }
-                    book.prettyUrl = encodeURI('/pd/' + book.title + '-' + book.subtitle + '-Prague' + '-' + book.category + '-' + 'photographer' + '/' + book.id)
+                    book.prettyUrl = encodeURI('/pd/' + book.title + '-' + book.subtitle + '-New York' + '-' + book.category + '-' + 'photographer' + '/' + book.id)
                         .replace(/%20/g, '-')
                         .replace('.', '')
                         .replace('-null','');
                         
-                    book.prettyTitle = encodeURI(book.title + '-' + book.subtitle + '-Prague' + '-' + book.category + '-' + 'photographer')
+                    book.prettyTitle = encodeURI(book.title + '-' + book.subtitle + '-New York' + '-' + book.category + '-' + 'photographer')
                         .replace(/%20/g, '-')
                         .replace('.', '')
                         .replace('-null','');

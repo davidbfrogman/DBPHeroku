@@ -13,7 +13,7 @@ export class App {
     configureRouter(config, router) {
 
         //This title string gets appended to the Title field that's below in the config.map
-        config.title = 'Prague Photographer | Fashion | Headshots | Editorial | Advertising';
+        config.title = 'New York Photographer | Fashion | Headshots | Editorial | Advertising';
 
         // This will remove the hash from the url so we don't have those bad SEO problems
         config.options.pushState = true;

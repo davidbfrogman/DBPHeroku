@@ -36,11 +36,11 @@ export class ImageDetail {
         console.log(this.portfolioBook);
 
 
-        this.portfolioBook.prettyTitle = encodeURI(this.portfolioBook.title + ' ' + this.portfolioBook.subtitle + ' Prague ' + this.portfolioBook.category + ' photographer')
+        this.portfolioBook.prettyTitle = encodeURI(this.portfolioBook.title + ' ' + this.portfolioBook.subtitle + ' New York ' + this.portfolioBook.category + ' photographer')
             .replace(/%20/g, ' ')
             .replace('-null', '');
 
-        this.portfolioBook.backTitle = encodeURI(' Prague ' + this.portfolioBook.category + ' Photographer')
+        this.portfolioBook.backTitle = encodeURI(' New York ' + this.portfolioBook.category + ' Photographer')
             .replace(/%20/g, ' ')
             .replace('.', '')
             .replace('-null', '');

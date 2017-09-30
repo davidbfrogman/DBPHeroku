@@ -4,7 +4,7 @@ import {dbpParallax} from '../3rdParty/dbpParallax';
 
 @inject(dbpParallax)
 export class dbpheader {
-	heading = 'Prague Fashion Photographer';
+	heading = 'New York Fashion Photographer';
 	portfolioBooks = [];
     mobileTest = false;
 

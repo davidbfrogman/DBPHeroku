@@ -14,7 +14,7 @@ export class contact {
         this.smoothscroll = smoothscroll;
         this.dbpConfig = dbpConfig;
         this.dbpUtility = dbpUtility;
-        this.heading = 'Contact Prague Fashion Photogrpaher';
+        this.heading = 'Contact New York Fashion Photogrpaher';
                 
         this.http.configure(config => {
             config
@@ -108,7 +108,7 @@ export class contact {
                 icon: image,
                 title: 'Dave Brown Photography Studios',
                 infoWindow: {
-                    content: '<p><strong>Dave Brown Photography</strong><br/>Vinohradská 1786/122, 130 00 Praha 3-Vinohrady<br/>P: +420 774 954 078<br/>E: info@davebrownphotography.com </p>'
+                    content: '<p><strong>Dave Brown Photography</strong><br/>135 West 116th St. #4A New York, NY 10026<br/>P: 917-747-8684<br/>E: info@davebrownphotography.com </p>'
                 }
             });
 
