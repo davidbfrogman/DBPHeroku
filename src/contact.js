@@ -77,7 +77,7 @@ export class contact {
     }
 
     buildMapUserInterface() {
-        var mapLocation = new google.maps.LatLng(50.077689, 14.458800, 400);
+        var mapLocation = new google.maps.LatLng(40.8029069, -73.9532712, 400);
 
         var $mapis = $('#map');
 
